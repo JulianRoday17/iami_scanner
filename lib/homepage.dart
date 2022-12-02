@@ -39,7 +39,7 @@ class _HomePageState extends State<HomePage> {
         child: Text("Test"),
         onPressed: () async {
           print('Running command: ${ping.command}');
-          ping.;
+          ping;
         },
       )),
     );
