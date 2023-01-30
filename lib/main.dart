@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:iami_scanner/features/login/presentation/screens/login_screen.dart';
+import 'package:iami_scanner/features/scan_in.dart/presentation/screens/scan_in_inpur_detail_screen.dart';
+import 'package:iami_scanner/features/scan_in.dart/presentation/screens/scan_in_input_screen.dart';
 import 'package:iami_scanner/homepage.dart';
 // import 'package:workmanager/workmanager.dart';
 
@@ -27,9 +30,19 @@ class IamiScanner extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: HomePage(),
+      theme: ThemeData(
+        scaffoldBackgroundColor: Colors.blueAccent,
+        appBarTheme: const AppBarTheme(color: Colors.white),
+      ),
+      initialRoute: '/login',
+      routes: {
+        '/login': (context) => const LoginScreen(),
+        '/home': (context) => const HomePage(),
+        '/scan-in-input': (context) => const ScanInInputScreen(),
+        '/scan-in-detail': (context) => const ScanInInputDetailScreen(),
+      },
     );
   }
 }
